@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BizVerse | Ideas • Business • Custom Merchandise</title>
+  <title>BizVerse | Ideas • Business • Custom Merch</title>
 
   <meta name="description"
-    content="BizVerse - Business tips, project ideas and custom merchandise for students, professionals and dreamers.">
+        content="BizVerse - Business tips, project ideas and custom merchandise in one place.">
 
   <style>
     * {
@@ -19,27 +19,32 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #fffaf7;
+      background: #fff8f3;
       color: #222;
       line-height: 1.6;
     }
 
+    /* HEADER */
     header {
-      background: #ffffff;
-      padding: 18px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      background: white;
+      border-bottom: 1px solid #eee;
+      padding: 14px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-      font-size: 28px;
-      font-weight: bold;
-      color: #f04b23;
+      font-size: 25px;
+      font-weight: 800;
+      color: #f4511e;
+    }
+
+    .logo span {
+      color: #ff8a00;
     }
 
     nav a {
@@ -50,73 +55,71 @@
     }
 
     nav a:hover {
-      color: #f04b23;
+      color: #f4511e;
     }
 
+    /* HERO */
     .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 80px 6%;
       text-align: center;
-      padding: 60px 6%;
-      background: linear-gradient(135deg, #fff1e9, #fffaf7);
-    }
-
-    .hero-content {
-      max-width: 850px;
+      background: linear-gradient(135deg, #fff1e7, #fff);
     }
 
     .hero h1 {
-      font-size: 55px;
-      color: #f04b23;
+      font-size: 48px;
+      color: #e64a19;
       margin-bottom: 15px;
     }
 
-    .hero h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
+    .hero h1 span {
+      color: #ff8a00;
     }
 
     .hero p {
+      max-width: 700px;
+      margin: auto;
       font-size: 18px;
       color: #555;
-      margin-bottom: 30px;
+    }
+
+    .buttons {
+      margin-top: 30px;
     }
 
     .btn {
       display: inline-block;
-      background: #f04b23;
-      color: white;
       padding: 13px 25px;
+      margin: 6px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      margin: 6px;
-      border: 2px solid #f04b23;
+      background: #f4511e;
+      color: white;
+      border: 2px solid #f4511e;
     }
 
     .btn:hover {
-      background: #d83d19;
+      background: #d84315;
     }
 
-    .btn-light {
+    .btn.light {
       background: white;
-      color: #f04b23;
+      color: #f4511e;
     }
 
+    /* SECTIONS */
     section {
       padding: 70px 6%;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 40px;
     }
 
     .section-title h2 {
-      font-size: 36px;
-      color: #f04b23;
+      font-size: 34px;
+      color: #e64a19;
     }
 
     .section-title p {
@@ -124,32 +127,35 @@
       margin-top: 8px;
     }
 
+    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
-      max-width: 1150px;
+      max-width: 1100px;
       margin: auto;
     }
 
     .card {
       background: white;
+      border-radius: 20px;
       padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-7px);
+      transform: translateY(-8px);
     }
 
     .icon {
-      font-size: 42px;
+      font-size: 50px;
       margin-bottom: 15px;
     }
 
     .card h3 {
+      color: #e64a19;
       margin-bottom: 10px;
       font-size: 22px;
     }
@@ -158,93 +164,120 @@
       color: #666;
     }
 
-    .projects {
-      background: #fff2eb;
+    /* HIGHLIGHTS */
+    .highlights {
+      background: #fff;
     }
 
-    .project-card {
-      background: white;
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #fff3e9, #ffffff);
+      border: 1px solid #ffd5bd;
+      border-radius: 18px;
       padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
     }
 
-    .project-number {
-      color: #f04b23;
-      font-size: 18px;
-      font-weight: bold;
+    .highlight h3 {
+      color: #f4511e;
+      margin-bottom: 8px;
     }
 
-    .project-card h3 {
-      margin: 8px 0;
-    }
-
+    /* MERCH */
     .merch {
-      text-align: center;
+      background: #fff4ec;
     }
 
     .merch-box {
-      max-width: 850px;
+      max-width: 800px;
       margin: auto;
       background: white;
-      padding: 45px 25px;
-      border-radius: 20px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-    }
-
-    .merch-icons {
-      font-size: 55px;
-      margin: 20px 0;
-    }
-
-    .about {
-      background: #222;
-      color: white;
+      border-radius: 25px;
+      padding: 35px;
       text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
 
-    .about h2 {
-      color: #ff7048;
-      margin-bottom: 15px;
+    .products {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .product {
+      padding: 18px 22px;
+      border: 1px solid #ffd0bb;
+      border-radius: 15px;
+      background: #fffaf7;
+      font-weight: bold;
+    }
+
+    /* ABOUT */
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
     }
 
     .about p {
-      max-width: 800px;
-      margin: auto;
+      color: #555;
+      font-size: 17px;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      background: #222;
+      color: white;
+    }
+
+    .contact h2 {
+      color: #ff8a00;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
       color: #ddd;
     }
 
+    .contact a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
     footer {
+      text-align: center;
+      padding: 22px;
       background: #111;
       color: #aaa;
-      text-align: center;
-      padding: 25px;
+      font-size: 14px;
     }
 
-    footer strong {
-      color: #ff7048;
-    }
-
+    /* MOBILE */
     @media (max-width: 800px) {
-      header {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      nav a {
-        margin: 0 6px;
-        font-size: 14px;
+      nav {
+        display: none;
       }
 
       .hero h1 {
-        font-size: 42px;
-      }
-
-      .hero h2 {
-        font-size: 22px;
+        font-size: 38px;
       }
 
       .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-grid {
         grid-template-columns: 1fr;
       }
 
@@ -259,200 +292,263 @@
 
   <!-- HEADER -->
   <header>
-    <div class="logo">BizVerse</div>
+    <div class="logo">
+      Biz<span>Verse</span>
+    </div>
 
     <nav>
       <a href="#home">Home</a>
-      <a href="#tips">Business Tips</a>
+      <a href="#business">Business</a>
       <a href="#projects">Projects</a>
-      <a href="#merch">Merchandise</a>
-      <a href="#about">About</a>
+      <a href="#merch">Merch</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-content">
 
-      <h1>BizVerse</h1>
+    <h1>Welcome to <span>BizVerse</span> 🚀</h1>
 
-      <h2>Ideas That Inspire. Business That Grows.</h2>
+    <p>
+      Ideas को opportunity में बदलने की जगह।
+      Business tips, project ideas और custom merchandise —
+      सब कुछ एक ही platform पर।
+    </p>
 
-      <p>
-        Discover smart business tips, exciting project ideas
-        and personalized merchandise — all in one place.
-      </p>
-
-      <a href="#projects" class="btn">Explore Projects</a>
-      <a href="#merch" class="btn btn-light">Custom Merchandise</a>
-
+    <div class="buttons">
+      <a href="#business" class="btn">Explore Ideas</a>
+      <a href="#merch" class="btn light">Custom Merch</a>
     </div>
+
   </section>
 
 
-  <!-- BUSINESS TIPS -->
-  <section id="tips">
+  <!-- MAIN SERVICES -->
+  <section id="business">
 
     <div class="section-title">
-      <h2>💼 Business & Money Tips</h2>
-      <p>Learn, plan and grow your ideas.</p>
+      <h2>What We Offer</h2>
+      <p>आपके ideas को आगे बढ़ाने के लिए तीन powerful sections</p>
     </div>
 
     <div class="cards">
 
       <div class="card">
         <div class="icon">💰</div>
-        <h3>Save Smart</h3>
+        <h3>Business Tips</h3>
         <p>
-          Learn simple ways to manage money and build better financial habits.
+          Business, money और smart earning से जुड़े
+          useful tips और ideas।
+        </p>
+      </div>
+
+      <div class="card" id="projects">
+        <div class="icon">🚀</div>
+        <h3>Project Ideas</h3>
+        <p>
+          Online और offline projects के लिए
+          नए और practical ideas।
         </p>
       </div>
 
       <div class="card">
-        <div class="icon">📈</div>
-        <h3>Grow Your Business</h3>
+        <div class="icon">👕</div>
+        <h3>Custom Merch</h3>
         <p>
-          Discover practical strategies to turn your idea into a growing business.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">💡</div>
-        <h3>Think Different</h3>
-        <p>
-          Find creative ideas and opportunities that can help you stand out.
+          अपनी पसंद की design या photo से
+          T-shirt, Mug, Cap और Bag बनवाएं।
         </p>
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
+  <!-- PROJECT HIGHLIGHTS -->
+  <section class="highlights">
 
     <div class="section-title">
-      <h2>🚀 Project Ideas</h2>
-      <p>Big ideas for online and offline opportunities.</p>
+      <h2>Project Highlights ⭐</h2>
+      <p>कुछ शानदार ideas जिन्हें आप explore कर सकते हैं</p>
     </div>
 
-    <div class="cards">
+    <div class="highlight-grid">
 
-      <div class="project-card">
-        <span class="project-number">01</span>
-        <h3>Online Store</h3>
-        <p>Start an online store and sell products to customers.</p>
+      <div class="highlight">
+        <h3>💡 01 — Online Store</h3>
+        <p>
+          अपना online store शुरू करके products
+          और services को internet पर sell करें।
+        </p>
       </div>
 
-      <div class="project-card">
-        <span class="project-number">02</span>
-        <h3>Food Business</h3>
-        <p>Create a local food delivery or homemade food business.</p>
+      <div class="highlight">
+        <h3>📱 02 — Mobile App Idea</h3>
+        <p>
+          किसी daily-life problem को solve करने
+          वाली useful mobile application बनाएं।
+        </p>
       </div>
 
-      <div class="project-card">
-        <span class="project-number">03</span>
-        <h3>Digital Services</h3>
-        <p>Offer useful digital services to individuals and businesses.</p>
+      <div class="highlight">
+        <h3>🎓 03 — Student Project</h3>
+        <p>
+          Students के लिए practical और
+          portfolio-ready project ideas।
+        </p>
       </div>
 
-      <div class="project-card">
-        <span class="project-number">04</span>
-        <h3>Content Creation</h3>
-        <p>Build a content brand around your skills and interests.</p>
+      <div class="highlight">
+        <h3>🏪 04 — Local Business</h3>
+        <p>
+          Local area में कम लागत से शुरू होने
+          वाले business concepts।
+        </p>
       </div>
 
-      <div class="project-card">
-        <span class="project-number">05</span>
-        <h3>Local Delivery</h3>
-        <p>Create a simple delivery service for your local community.</p>
+      <div class="highlight">
+        <h3>📢 05 — Digital Marketing</h3>
+        <p>
+          Social media और digital marketing के
+          जरिए business को grow करने के ideas।
+        </p>
       </div>
 
-      <div class="project-card">
-        <span class="project-number">06</span>
-        <h3>Education Platform</h3>
-        <p>Share educational resources, tutorials and learning materials.</p>
+      <div class="highlight">
+        <h3>🤖 06 — AI Projects</h3>
+        <p>
+          AI और modern technology पर आधारित
+          creative project concepts।
+        </p>
       </div>
 
-      <div class="project-card">
-        <span class="project-number">07</span>
-        <h3>Photography Service</h3>
-        <p>Turn photography and creative skills into a service business.</p>
+      <div class="highlight">
+        <h3>🌱 07 — Eco Business</h3>
+        <p>
+          Environment-friendly products और
+          sustainable business ideas।
+        </p>
       </div>
 
-      <div class="project-card">
-        <span class="project-number">08</span>
-        <h3>Event Services</h3>
-        <p>Help organize and manage small events and celebrations.</p>
+      <div class="highlight">
+        <h3>🎨 08 — Creative Brand</h3>
+        <p>
+          अपना unique brand बनाकर creative
+          products और designs बेचें।
+        </p>
       </div>
 
-      <div class="project-card">
-        <span class="project-number">09</span>
-        <h3>Eco-Friendly Products</h3>
-        <p>Create and promote useful environmentally friendly products.</p>
+      <div class="highlight">
+        <h3>💻 09 — Freelancing</h3>
+        <p>
+          अपनी skills का इस्तेमाल करके
+          online freelancing projects पर काम करें।
+        </p>
       </div>
 
-      <div class="project-card">
-        <span class="project-number">10</span>
-        <h3>Personal Brand</h3>
-        <p>Build your own personal brand around your knowledge and skills.</p>
+      <div class="highlight">
+        <h3>🔥 10 — Your Own Idea</h3>
+        <p>
+          आपका idea सबसे खास हो सकता है।
+          उसे plan करें, build करें और आगे बढ़ाएं।
+        </p>
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- CUSTOM MERCHANDISE -->
+  <!-- CUSTOM MERCH -->
   <section class="merch" id="merch">
 
     <div class="section-title">
-      <h2>👕 Custom Merchandise</h2>
-      <p>Make products that are uniquely yours.</p>
+      <h2>Custom Merchandise 🎨</h2>
+      <p>अपनी design, photo या idea को merchandise में बदलें</p>
     </div>
 
     <div class="merch-box">
 
-      <h3>T-Shirts • Mugs • Caps • Bags</h3>
+      <h3>Choose Your Product</h3>
 
-      <div class="merch-icons">
-        👕 ☕ 🧢 🎒
+      <div class="products">
+
+        <div class="product">👕 T-Shirt</div>
+        <div class="product">☕ Mug</div>
+        <div class="product">🧢 Cap</div>
+        <div class="product">👜 Bag</div>
+
       </div>
 
       <p>
-        Send us your favorite photo, logo or design
-        and create personalized merchandise.
+        अपनी पसंद की design या photo भेजें और
+        अपने लिए custom product तैयार करवाएं।
       </p>
 
       <br>
 
-      <a href="mailto:your-email@example.com" class="btn">
-        Send Your Design
+      <a href="#contact" class="btn">
+        Request Custom Design
       </a>
 
     </div>
+
   </section>
 
 
   <!-- ABOUT -->
-  <section class="about" id="about">
+  <section>
 
-    <h2>About BizVerse</h2>
+    <div class="about">
+
+      <div class="section-title">
+        <h2>About BizVerse</h2>
+      </div>
+
+      <p>
+        BizVerse एक ऐसा platform है जहां Students,
+        Working Professionals और dreamers अपने
+        business ideas, project ideas और creative
+        products को explore कर सकते हैं।
+      </p>
+
+      <br>
+
+      <p>
+        हमारा goal है — <strong>Ideas को Action में बदलना.</strong>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <h2>Let's Build Something Great 🚀</h2>
 
     <p>
-      BizVerse is a platform created for students, working professionals
-      and dreamers who want to discover new ideas, learn about business
-      and create something of their own.
+      आपके पास कोई business idea या custom design है?
     </p>
+
+    <br>
+
+    <a href="mailto:your-email@example.com" class="btn">
+      Contact BizVerse
+    </a>
 
   </section>
 
 
   <!-- FOOTER -->
   <footer>
-    <p>
-      © 2026 <strong>BizVerse</strong> — Ideas • Business • Custom Merchandise
-    </p>
+
+    © 2026 BizVerse — Ideas • Business • Custom Merch
+
   </footer>
 
 </body>
