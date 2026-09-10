@@ -1,555 +1,3297 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-  <title>BizVerse | Ideas • Business • Custom Merch</title>
+<title>BizVerse — Ideas • Business • Projects • Custom Products</title>
 
-  <meta name="description"
-        content="BizVerse - Business tips, project ideas and custom merchandise in one place.">
+<meta name="description" content="BizVerse — Business ideas, practical tips, projects, custom products and direct WhatsApp enquiries.">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff8f3;
-      color: #222;
-      line-height: 1.6;
-    }
+:root{
+  --bg:#f6f7fb;
+  --surface:#ffffff;
+  --surface2:#f1f3f8;
+  --text:#182033;
+  --muted:#697386;
+  --border:#e4e7ee;
+  --primary:#ff5a1f;
+  --primary2:#ff8a00;
+  --dark:#101522;
+  --success:#16a34a;
+  --shadow:0 15px 45px rgba(20,25,40,.09);
+  --radius:22px;
+}
 
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: white;
-      border-bottom: 1px solid #eee;
-      padding: 14px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+body.dark{
+  --bg:#0b1020;
+  --surface:#12192a;
+  --surface2:#192235;
+  --text:#f5f7fb;
+  --muted:#aab3c5;
+  --border:#29344a;
+  --dark:#070b14;
+  --shadow:0 15px 45px rgba(0,0,0,.28);
+}
 
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      color: #f4511e;
-    }
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    .logo span {
-      color: #ff8a00;
-    }
+a{
+  color:inherit;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      margin-left: 18px;
-      font-weight: 600;
-    }
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
 
-    nav a:hover {
-      color: #f4511e;
-    }
+button{
+  cursor:pointer;
+}
 
-    /* HERO */
-    .hero {
-      padding: 80px 6%;
-      text-align: center;
-      background: linear-gradient(135deg, #fff1e7, #fff);
-    }
+/* HEADER */
 
-    .hero h1 {
-      font-size: 48px;
-      color: #e64a19;
-      margin-bottom: 15px;
-    }
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
 
-    .hero h1 span {
-      color: #ff8a00;
-    }
+body.dark header{
+  background:rgba(11,16,32,.92);
+}
 
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
-      color: #555;
-    }
+.navbar{
+  max-width:1250px;
+  margin:auto;
+  min-height:74px;
+  padding:0 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
 
-    .buttons {
-      margin-top: 30px;
-    }
+.logo{
+  text-decoration:none;
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:-1px;
+  color:var(--text);
+}
 
-    .btn {
-      display: inline-block;
-      padding: 13px 25px;
-      margin: 6px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      background: #f4511e;
-      color: white;
-      border: 2px solid #f4511e;
-    }
+.logo span{
+  color:var(--primary);
+}
 
-    .btn:hover {
-      background: #d84315;
-    }
+.logo small{
+  display:block;
+  font-size:9px;
+  letter-spacing:2px;
+  color:var(--muted);
+  margin-top:-7px;
+}
 
-    .btn.light {
-      background: white;
-      color: #f4511e;
-    }
+nav{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
 
-    /* SECTIONS */
-    section {
-      padding: 70px 6%;
-    }
+nav a{
+  text-decoration:none;
+  padding:9px 11px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:700;
+  color:var(--muted);
+}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+nav a:hover{
+  color:var(--primary);
+  background:var(--surface2);
+}
 
-    .section-title h2 {
-      font-size: 34px;
-      color: #e64a19;
-    }
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
 
-    .section-title p {
-      color: #666;
-      margin-top: 8px;
-    }
+.icon-btn{
+  width:42px;
+  height:42px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--surface);
+  color:var(--text);
+}
 
-    /* CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.cart-btn{
+  position:relative;
+}
 
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
+.cart-count{
+  position:absolute;
+  top:-5px;
+  right:-5px;
+  min-width:19px;
+  height:19px;
+  border-radius:50%;
+  background:var(--primary);
+  color:white;
+  font-size:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+}
 
-    .card:hover {
-      transform: translateY(-8px);
-    }
+.menu-btn{
+  display:none;
+}
 
-    .icon {
-      font-size: 50px;
-      margin-bottom: 15px;
-    }
+/* COMMON */
 
-    .card h3 {
-      color: #e64a19;
-      margin-bottom: 10px;
-      font-size: 22px;
-    }
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
 
-    .card p {
-      color: #666;
-    }
+section{
+  padding:82px 0;
+}
 
-    /* HIGHLIGHTS */
-    .highlights {
-      background: #fff;
-    }
+.section-head{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 42px;
+}
 
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+.section-head .eyebrow{
+  display:inline-block;
+  color:var(--primary);
+  background:rgba(255,90,31,.1);
+  padding:6px 12px;
+  border-radius:50px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.5px;
+  margin-bottom:12px;
+}
 
-    .highlight {
-      background: linear-gradient(135deg, #fff3e9, #ffffff);
-      border: 1px solid #ffd5bd;
-      border-radius: 18px;
-      padding: 25px;
-    }
+.section-head h2{
+  font-size:40px;
+  line-height:1.15;
+  margin-bottom:12px;
+}
 
-    .highlight h3 {
-      color: #f4511e;
-      margin-bottom: 8px;
-    }
+.section-head p{
+  color:var(--muted);
+}
 
-    /* MERCH */
-    .merch {
-      background: #fff4ec;
-    }
+.btn{
+  border:0;
+  border-radius:12px;
+  padding:13px 20px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:800;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:.2s;
+}
 
-    .merch-box {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      border-radius: 25px;
-      padding: 35px;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
+.btn:hover{
+  transform:translateY(-2px);
+  filter:brightness(.96);
+}
 
-    .products {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin: 25px 0;
-    }
+.btn.secondary{
+  background:var(--surface);
+  color:var(--text);
+  border:1px solid var(--border);
+}
 
-    .product {
-      padding: 18px 22px;
-      border: 1px solid #ffd0bb;
-      border-radius: 15px;
-      background: #fffaf7;
-      font-weight: bold;
-    }
+.btn.dark{
+  background:var(--dark);
+}
 
-    /* ABOUT */
-    .about {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
+.btn.whatsapp{
+  background:#20b957;
+}
 
-    .about p {
-      color: #555;
-      font-size: 17px;
-    }
+.btn.small{
+  padding:10px 13px;
+  font-size:13px;
+}
 
-    /* CONTACT */
-    .contact {
-      text-align: center;
-      background: #222;
-      color: white;
-    }
+/* HERO */
 
-    .contact h2 {
-      color: #ff8a00;
-      margin-bottom: 15px;
-    }
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:95px 0 75px;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(255,138,0,.16),transparent 28%),
+    radial-gradient(circle at 85% 30%,rgba(255,90,31,.14),transparent 30%),
+    var(--bg);
+}
 
-    .contact p {
-      color: #ddd;
-    }
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:55px;
+}
 
-    .contact a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 13px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  border-radius:50px;
+  font-size:12px;
+  font-weight:800;
+  color:var(--muted);
+  box-shadow:var(--shadow);
+}
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 22px;
-      background: #111;
-      color: #aaa;
-      font-size: 14px;
-    }
+.hero h1{
+  font-size:clamp(45px,6vw,76px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin:20px 0;
+}
 
-    /* MOBILE */
-    @media (max-width: 800px) {
-      nav {
-        display: none;
-      }
+.hero h1 span{
+  background:linear-gradient(90deg,var(--primary),var(--primary2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-      .hero h1 {
-        font-size: 38px;
-      }
+.hero p{
+  font-size:18px;
+  color:var(--muted);
+  max-width:650px;
+}
 
-      .cards {
-        grid-template-columns: 1fr;
-      }
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:28px;
+}
 
-      .highlight-grid {
-        grid-template-columns: 1fr;
-      }
+.hero-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:28px;
+  margin-top:32px;
+}
 
-      section {
-        padding: 55px 5%;
-      }
-    }
-  </style>
+.stat strong{
+  display:block;
+  font-size:24px;
+}
+
+.stat span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.hero-card{
+  background:linear-gradient(145deg,var(--surface),var(--surface2));
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:25px;
+  box-shadow:var(--shadow);
+}
+
+.dashboard-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.live{
+  display:flex;
+  gap:7px;
+  align-items:center;
+  font-size:12px;
+  color:var(--success);
+  font-weight:800;
+}
+
+.live i{
+  width:8px;
+  height:8px;
+  background:var(--success);
+  border-radius:50%;
+}
+
+.mini-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.mini-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:20px;
+  border-radius:18px;
+}
+
+.mini-card .emoji{
+  font-size:28px;
+}
+
+.mini-card strong{
+  display:block;
+  margin-top:8px;
+}
+
+.mini-card small{
+  color:var(--muted);
+}
+
+/* SEARCH */
+
+.search-wrap{
+  margin-top:35px;
+  display:flex;
+  gap:10px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:7px;
+  box-shadow:var(--shadow);
+}
+
+.search-wrap input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:11px;
+  background:transparent;
+  color:var(--text);
+}
+
+/* CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:25px;
+  box-shadow:0 7px 25px rgba(20,25,40,.04);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+}
+
+.card-icon{
+  width:52px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,90,31,.1);
+  border-radius:15px;
+  font-size:26px;
+  margin-bottom:18px;
+}
+
+.card h3{
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* WHAT'S NEW */
+
+.news-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:18px;
+}
+
+.news-card{
+  min-height:220px;
+  padding:27px;
+  border-radius:24px;
+  color:white;
+  background:linear-gradient(135deg,#151b2c,#2a3247);
+  position:relative;
+  overflow:hidden;
+}
+
+.news-card:first-child{
+  background:linear-gradient(135deg,#f4511e,#ff9d18);
+}
+
+.news-card h3{
+  font-size:24px;
+  margin:12px 0;
+}
+
+.news-card p{
+  opacity:.86;
+  font-size:14px;
+}
+
+.news-card .new-tag{
+  background:rgba(255,255,255,.2);
+  padding:5px 9px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+}
+
+/* TABS */
+
+.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:28px;
+}
+
+.tab{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--muted);
+  padding:9px 15px;
+  border-radius:50px;
+  font-weight:800;
+  font-size:13px;
+}
+
+.tab.active,
+.tab:hover{
+  background:var(--primary);
+  color:white;
+  border-color:var(--primary);
+}
+
+/* IDEA/TIP CARDS */
+
+.content-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:22px;
+  transition:.2s;
+}
+
+.content-card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow);
+}
+
+.content-card .number{
+  color:var(--primary);
+  font-weight:900;
+  font-size:13px;
+}
+
+.content-card h3{
+  margin:7px 0;
+  font-size:18px;
+}
+
+.content-card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin:13px 0;
+}
+
+.tag{
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:4px 8px;
+  font-size:10px;
+  font-weight:800;
+  color:var(--muted);
+}
+
+/* PROJECTS */
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.project-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:21px;
+  display:flex;
+  flex-direction:column;
+  min-height:275px;
+}
+
+.project-icon{
+  font-size:35px;
+  margin-bottom:14px;
+}
+
+.project-card h3{
+  font-size:18px;
+}
+
+.project-card p{
+  color:var(--muted);
+  font-size:13px;
+  margin:8px 0 15px;
+}
+
+.project-card .bottom{
+  margin-top:auto;
+  display:flex;
+  gap:7px;
+}
+
+.project-card .bottom button{
+  flex:1;
+}
+
+/* PRODUCTS */
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.product-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:23px;
+  overflow:hidden;
+}
+
+.product-visual{
+  height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#fff0e7,#fff);
+  font-size:75px;
+}
+
+body.dark .product-visual{
+  background:linear-gradient(135deg,#1a2233,#202b40);
+}
+
+.product-info{
+  padding:20px;
+}
+
+.product-info h3{
+  font-size:20px;
+}
+
+.price{
+  color:var(--primary);
+  font-size:22px;
+  font-weight:900;
+  margin:5px 0 13px;
+}
+
+.product-actions{
+  display:flex;
+  gap:7px;
+}
+
+.product-actions button{
+  flex:1;
+}
+
+/* CALCULATOR */
+
+.calc{
+  max-width:850px;
+  margin:auto;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.field label{
+  display:block;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:6px;
+}
+
+.field input,
+.field textarea,
+.field select{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+  outline:none;
+  background:var(--surface);
+  color:var(--text);
+}
+
+.field textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.calc-result{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+
+.result-box{
+  padding:18px;
+  border-radius:15px;
+  background:var(--surface2);
+  text-align:center;
+}
+
+.result-box strong{
+  display:block;
+  font-size:22px;
+  color:var(--primary);
+}
+
+.result-box span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* HOW */
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  counter-reset:step;
+}
+
+.step{
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:25px;
+  border-radius:20px;
+  position:relative;
+}
+
+.step-num{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--primary);
+  color:white;
+  border-radius:12px;
+  font-weight:900;
+  margin-bottom:17px;
+}
+
+/* TRUST */
+
+.trust{
+  background:var(--dark);
+  color:white;
+}
+
+.trust .section-head p{
+  color:#aeb6c6;
+}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.trust-card{
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.05);
+  padding:23px;
+  border-radius:18px;
+}
+
+.trust-card h3{
+  margin:10px 0 5px;
+}
+
+.trust-card p{
+  color:#aeb6c6;
+  font-size:13px;
+}
+
+/* TESTIMONIAL */
+
+.testimonials{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.quote{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:24px;
+}
+
+.stars{
+  color:#ff9d18;
+  letter-spacing:2px;
+}
+
+.quote p{
+  margin:13px 0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.quote strong{
+  font-size:13px;
+}
+
+/* FAQ */
+
+.faq{
+  max-width:850px;
+  margin:auto;
+}
+
+.faq-item{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:15px;
+  margin-bottom:10px;
+  overflow:hidden;
+}
+
+.faq-question{
+  width:100%;
+  padding:18px;
+  border:0;
+  background:none;
+  color:var(--text);
+  display:flex;
+  justify-content:space-between;
+  text-align:left;
+  font-weight:800;
+}
+
+.faq-answer{
+  display:none;
+  padding:0 18px 18px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.faq-item.open .faq-answer{
+  display:block;
+}
+
+/* CONTACT */
+
+.contact-box{
+  max-width:950px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:30px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+
+.contact-info{
+  padding:15px;
+}
+
+.contact-info h2{
+  font-size:35px;
+  line-height:1.15;
+  margin:15px 0;
+}
+
+.contact-info p{
+  color:var(--muted);
+}
+
+.contact-list{
+  margin-top:22px;
+  display:grid;
+  gap:12px;
+}
+
+.contact-item{
+  padding:13px;
+  background:var(--surface2);
+  border-radius:12px;
+  font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#080c15;
+  color:white;
+  padding:50px 0 20px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:30px;
+}
+
+footer h3{
+  margin-bottom:13px;
+}
+
+footer p,
+footer a{
+  color:#9ba5b8;
+  font-size:13px;
+}
+
+footer a{
+  display:block;
+  text-decoration:none;
+  margin:7px 0;
+}
+
+footer a:hover{
+  color:white;
+}
+
+.copyright{
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:35px;
+  padding-top:18px;
+  text-align:center;
+  color:#7e8798;
+  font-size:12px;
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(0,0,0,.62);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(680px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:var(--surface);
+  color:var(--text);
+  border-radius:25px;
+  padding:28px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  top:15px;
+  right:15px;
+  width:38px;
+  height:38px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--surface2);
+  color:var(--text);
+}
+
+.modal-icon{
+  font-size:55px;
+}
+
+.modal-box h2{
+  margin:8px 0;
+}
+
+.modal-description{
+  color:var(--muted);
+}
+
+.detail-list{
+  margin:18px 0;
+  display:grid;
+  gap:8px;
+}
+
+.detail-list div{
+  background:var(--surface2);
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:13px;
+}
+
+/* CART */
+
+.cart-item{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:15px;
+  padding:15px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.cart-item h4{
+  margin-bottom:4px;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.qty button{
+  width:30px;
+  height:30px;
+  border:1px solid var(--border);
+  background:var(--surface2);
+  color:var(--text);
+  border-radius:8px;
+}
+
+.cart-total{
+  display:flex;
+  justify-content:space-between;
+  font-size:20px;
+  font-weight:900;
+  padding:18px 0;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  z-index:4000;
+  background:var(--dark);
+  color:white;
+  padding:13px 17px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  transform:translateY(100px);
+  opacity:0;
+  transition:.3s;
+  font-size:13px;
+  max-width:320px;
+}
+
+.toast.show{
+  transform:translateY(0);
+  opacity:1;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1050px){
+  .project-grid,
+  .products-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .news-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .news-card:first-child{
+    grid-column:span 2;
+  }
+
+  .trust-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  nav a{
+    padding:8px 6px;
+  }
+}
+
+@media(max-width:800px){
+  nav{
+    display:none;
+    position:absolute;
+    top:74px;
+    left:0;
+    right:0;
+    background:var(--surface);
+    border-bottom:1px solid var(--border);
+    padding:12px 20px;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  nav.open{
+    display:flex;
+  }
+
+  nav a{
+    padding:12px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .hero-grid,
+  .contact-box{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:65px;
+  }
+
+  .grid,
+  .steps,
+  .testimonials{
+    grid-template-columns:1fr;
+  }
+
+  .news-grid{
+    grid-template-columns:1fr;
+  }
+
+  .news-card:first-child{
+    grid-column:auto;
+  }
+
+  .section-head h2{
+    font-size:31px;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+}
+
+@media(max-width:550px){
+  section{
+    padding:62px 0;
+  }
+
+  .container{
+    width:90%;
+  }
+
+  .project-grid,
+  .products-grid,
+  .trust-grid{
+    grid-template-columns:1fr;
+  }
+
+  .mini-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .form-grid,
+  .calc-result{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+  .search-wrap{
+    flex-direction:column;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">
-      Biz<span>Verse</span>
-    </div>
+<!-- HEADER -->
+<header>
+  <div class="navbar">
 
-    <nav>
+    <a class="logo" href="#home">
+      Biz<span>Verse</span>
+      <small>IDEAS • BUSINESS • ACTION</small>
+    </a>
+
+    <nav id="nav">
       <a href="#home">Home</a>
       <a href="#business">Business</a>
+      <a href="#ideas">Ideas</a>
       <a href="#projects">Projects</a>
-      <a href="#merch">Merch</a>
+      <a href="#products">Products</a>
+      <a href="#calculator">Calculator</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
 
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" title="Dark Mode">🌙</button>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
+      <button class="icon-btn cart-btn" onclick="openCart()" title="Cart">
+        🛒
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
 
-    <h1>Welcome to <span>BizVerse</span> 🚀</h1>
-
-    <p>
-      Ideas को opportunity में बदलने की जगह।
-      Business tips, project ideas और custom merchandise —
-      सब कुछ एक ही platform पर।
-    </p>
-
-    <div class="buttons">
-      <a href="#business" class="btn">Explore Ideas</a>
-      <a href="#merch" class="btn light">Custom Merch</a>
+      <button class="icon-btn menu-btn" onclick="toggleMenu()">☰</button>
     </div>
 
-  </section>
+  </div>
+</header>
 
 
-  <!-- MAIN SERVICES -->
-  <section id="business">
+<!-- HERO -->
+<section class="hero" id="home">
 
-    <div class="section-title">
-      <h2>What We Offer</h2>
-      <p>आपके ideas को आगे बढ़ाने के लिए तीन powerful sections</p>
+  <div class="container hero-grid">
+
+    <div>
+
+      <span class="badge">🚀 One Platform • Many Possibilities</span>
+
+      <h1>
+        Turn Your
+        <span>Ideas</span>
+        Into Action.
+      </h1>
+
+      <p>
+        BizVerse में business ideas, practical tips, projects,
+        custom products और direct WhatsApp support — सब एक ही जगह।
+      </p>
+
+      <div class="hero-actions">
+        <a href="#ideas" class="btn">💡 Explore Ideas</a>
+        <a href="#projects" class="btn secondary">🚀 Explore Projects</a>
+        <a href="#products" class="btn whatsapp">💬 Custom Products</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>20+</strong>
+          <span>Business Ideas</span>
+        </div>
+
+        <div class="stat">
+          <strong>20+</strong>
+          <span>Business Tips</span>
+        </div>
+
+        <div class="stat">
+          <strong>20+</strong>
+          <span>Project Concepts</span>
+        </div>
+
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>WhatsApp Enquiry</span>
+        </div>
+      </div>
+
     </div>
 
-    <div class="cards">
+
+    <div class="hero-card">
+
+      <div class="dashboard-top">
+        <strong>BizVerse Dashboard</strong>
+        <span class="live"><i></i> Active</span>
+      </div>
+
+      <div class="mini-grid">
+
+        <div class="mini-card">
+          <span class="emoji">💡</span>
+          <strong>Ideas</strong>
+          <small>Business opportunities</small>
+        </div>
+
+        <div class="mini-card">
+          <span class="emoji">📈</span>
+          <strong>Growth</strong>
+          <small>Practical strategies</small>
+        </div>
+
+        <div class="mini-card">
+          <span class="emoji">🚀</span>
+          <strong>Projects</strong>
+          <small>Build something useful</small>
+        </div>
+
+        <div class="mini-card">
+          <span class="emoji">🛍️</span>
+          <strong>Custom</strong>
+          <small>Create your product</small>
+        </div>
+
+      </div>
+
+      <div class="search-wrap">
+        <input id="globalSearch" placeholder="Search ideas, projects, products...">
+        <button class="btn small" onclick="globalSearch()">Search</button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WHAT'S NEW -->
+<section id="whatsnew">
+
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">WHAT'S NEW</span>
+      <h2>Latest From BizVerse</h2>
+      <p>नए ideas, features और opportunities को यहाँ discover करें।</p>
+    </div>
+
+    <div class="news-grid">
+
+      <div class="news-card">
+        <span class="new-tag">NEW</span>
+        <h3>🚀 BizVerse Platform Update</h3>
+        <p>
+          अब आपको ideas से लेकर projects और custom products
+          तक एक ही जगह पर explore करने का experience मिलेगा।
+        </p>
+      </div>
+
+      <div class="news-card">
+        <span class="new-tag">FEATURE</span>
+        <h3>💬 Direct WhatsApp</h3>
+        <p>
+          Project या product पसंद आने पर सीधे WhatsApp enquiry भेजें।
+        </p>
+      </div>
+
+      <div class="news-card">
+        <span class="new-tag">TOOL</span>
+        <h3>📊 Profit Calculator</h3>
+        <p>
+          Cost, selling price और quantity से estimated profit calculate करें।
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- BUSINESS -->
+<section id="business">
+
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">BUSINESS HUB</span>
+      <h2>Build Smarter Businesses</h2>
+      <p>Business शुरू करने, improve करने और grow करने के लिए useful resources.</p>
+    </div>
+
+    <div class="grid">
 
       <div class="card">
-        <div class="icon">💰</div>
-        <h3>Business Tips</h3>
+        <div class="card-icon">💡</div>
+        <h3>Idea Validation</h3>
         <p>
-          Business, money और smart earning से जुड़े
-          useful tips और ideas।
-        </p>
-      </div>
-
-      <div class="card" id="projects">
-        <div class="icon">🚀</div>
-        <h3>Project Ideas</h3>
-        <p>
-          Online और offline projects के लिए
-          नए और practical ideas।
+          किसी business idea पर समय और पैसा लगाने से पहले
+          customer problem, demand और competition समझें।
         </p>
       </div>
 
       <div class="card">
-        <div class="icon">👕</div>
-        <h3>Custom Merch</h3>
+        <div class="card-icon">📈</div>
+        <h3>Growth Strategy</h3>
         <p>
-          अपनी पसंद की design या photo से
-          T-shirt, Mug, Cap और Bag बनवाएं।
+          Marketing, customer retention, online presence और
+          repeat business पर focus करके growth plan बनाएं।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h3>Profit Planning</h3>
+        <p>
+          Cost, pricing, quantity और margin को समझकर
+          बेहतर business decisions लें।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📢</div>
+        <h3>Marketing</h3>
+        <p>
+          Social media, local marketing और useful content
+          के जरिए अपने business को लोगों तक पहुँचाएं।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Customer Growth</h3>
+        <p>
+          Customers की जरूरत समझें और अच्छा experience
+          देकर long-term relationships बनाएं।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🧠</div>
+        <h3>Smart Planning</h3>
+        <p>
+          Goals, budget, timeline और measurable actions
+          के साथ अपने business idea को plan करें।
         </p>
       </div>
 
     </div>
 
-  </section>
+  </div>
+</section>
 
 
-  <!-- PROJECT HIGHLIGHTS -->
-  <section class="highlights">
+<!-- IDEAS -->
+<section id="ideas">
 
-    <div class="section-title">
-      <h2>Project Highlights ⭐</h2>
-      <p>कुछ शानदार ideas जिन्हें आप explore कर सकते हैं</p>
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">IDEA LIBRARY</span>
+      <h2>20 Business Ideas</h2>
+      <p>उदाहरण के लिए practical business concepts explore करें।</p>
     </div>
 
-    <div class="highlight-grid">
-
-      <div class="highlight">
-        <h3>💡 01 — Online Store</h3>
-        <p>
-          अपना online store शुरू करके products
-          और services को internet पर sell करें।
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>📱 02 — Mobile App Idea</h3>
-        <p>
-          किसी daily-life problem को solve करने
-          वाली useful mobile application बनाएं।
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>🎓 03 — Student Project</h3>
-        <p>
-          Students के लिए practical और
-          portfolio-ready project ideas।
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>🏪 04 — Local Business</h3>
-        <p>
-          Local area में कम लागत से शुरू होने
-          वाले business concepts।
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>📢 05 — Digital Marketing</h3>
-        <p>
-          Social media और digital marketing के
-          जरिए business को grow करने के ideas।
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>🤖 06 — AI Projects</h3>
-        <p>
-          AI और modern technology पर आधारित
-          creative project concepts।
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>🌱 07 — Eco Business</h3>
-        <p>
-          Environment-friendly products और
-          sustainable business ideas।
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>🎨 08 — Creative Brand</h3>
-        <p>
-          अपना unique brand बनाकर creative
-          products और designs बेचें।
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>💻 09 — Freelancing</h3>
-        <p>
-          अपनी skills का इस्तेमाल करके
-          online freelancing projects पर काम करें।
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>🔥 10 — Your Own Idea</h3>
-        <p>
-          आपका idea सबसे खास हो सकता है।
-          उसे plan करें, build करें और आगे बढ़ाएं।
-        </p>
-      </div>
-
+    <div class="tabs">
+      <button class="tab active" onclick="filterIdeas('all',this)">All</button>
+      <button class="tab" onclick="filterIdeas('online',this)">Online</button>
+      <button class="tab" onclick="filterIdeas('offline',this)">Offline</button>
+      <button class="tab" onclick="filterIdeas('student',this)">Student</button>
+      <button class="tab" onclick="filterIdeas('creative',this)">Creative</button>
     </div>
 
-  </section>
+    <div class="grid" id="ideasGrid"></div>
+
+  </div>
+</section>
 
 
-  <!-- CUSTOM MERCH -->
-  <section class="merch" id="merch">
+<!-- TIPS -->
+<section>
 
-    <div class="section-title">
-      <h2>Custom Merchandise 🎨</h2>
-      <p>अपनी design, photo या idea को merchandise में बदलें</p>
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">BUSINESS TIPS</span>
+      <h2>20 Practical Tips</h2>
+      <p>छोटे लेकिन useful actions जिन्हें business planning में इस्तेमाल किया जा सकता है।</p>
     </div>
 
-    <div class="merch-box">
+    <div class="grid" id="tipsGrid"></div>
 
-      <h3>Choose Your Product</h3>
+  </div>
+</section>
 
-      <div class="products">
 
-        <div class="product">👕 T-Shirt</div>
-        <div class="product">☕ Mug</div>
-        <div class="product">🧢 Cap</div>
-        <div class="product">👜 Bag</div>
+<!-- PROJECTS -->
+<section id="projects">
 
-      </div>
+  <div class="container">
 
-      <p>
-        अपनी पसंद की design या photo भेजें और
-        अपने लिए custom product तैयार करवाएं।
-      </p>
-
-      <br>
-
-      <a href="#contact" class="btn">
-        Request Custom Design
-      </a>
-
+    <div class="section-head">
+      <span class="eyebrow">PROJECT MARKETPLACE</span>
+      <h2>Explore Projects</h2>
+      <p>Online, offline, student और creative project concepts.</p>
     </div>
 
-  </section>
-
-
-  <!-- ABOUT -->
-  <section>
-
-    <div class="about">
-
-      <div class="section-title">
-        <h2>About BizVerse</h2>
-      </div>
-
-      <p>
-        BizVerse एक ऐसा platform है जहां Students,
-        Working Professionals और dreamers अपने
-        business ideas, project ideas और creative
-        products को explore कर सकते हैं।
-      </p>
-
-      <br>
-
-      <p>
-        हमारा goal है — <strong>Ideas को Action में बदलना.</strong>
-      </p>
-
+    <div class="search-wrap">
+      <input id="projectSearch" placeholder="Search projects...">
+      <button class="btn small" onclick="renderProjects()">Search</button>
     </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-
-    <h2>Let's Build Something Great 🚀</h2>
-
-    <p>
-      आपके पास कोई business idea या custom design है?
-    </p>
 
     <br>
 
-    <a href="mailto:your-email@example.com" class="btn">
-      Contact BizVerse
-    </a>
+    <div class="tabs">
+      <button class="tab active" onclick="filterProjects('all',this)">All</button>
+      <button class="tab" onclick="filterProjects('online',this)">Online</button>
+      <button class="tab" onclick="filterProjects('offline',this)">Offline</button>
+      <button class="tab" onclick="filterProjects('student',this)">Student</button>
+      <button class="tab" onclick="filterProjects('creative',this)">Creative</button>
+      <button class="tab" onclick="filterProjects('ai',this)">AI</button>
+    </div>
 
-  </section>
+    <div class="project-grid" id="projectGrid"></div>
+
+  </div>
+</section>
 
 
-  <!-- FOOTER -->
-  <footer>
+<!-- PRODUCTS -->
+<section id="products">
 
-    © 2026 BizVerse — Ideas • Business • Custom Merch
+  <div class="container">
 
-  </footer>
+    <div class="section-head">
+      <span class="eyebrow">CUSTOM MERCH</span>
+      <h2>Make It Yours</h2>
+      <p>
+        अपनी पसंद के product के लिए enquiry करें,
+        requirement बताएं और design/photo share करें।
+      </p>
+    </div>
+
+    <div class="products-grid" id="productGrid"></div>
+
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section>
+
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">HOW IT WORKS</span>
+      <h2>Explore → Customize → Connect</h2>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Explore</h3>
+        <p>
+          Ideas, tips, projects या products में से अपनी जरूरत की चीज खोजें।
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Customize</h3>
+        <p>
+          Product के लिए quantity और requirement बताएं या project के बारे में सवाल करें।
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Connect</h3>
+        <p>
+          WhatsApp button दबाकर सीधे BizVerse chat पर enquiry भेजें।
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CALCULATOR -->
+<section id="calculator">
+
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">FREE TOOL</span>
+      <h2>Profit Calculator</h2>
+      <p>अपने product/service का estimated profit calculate करें।</p>
+    </div>
+
+    <div class="calc">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label>Product / Service Name</label>
+          <input id="calcName" placeholder="Example: Custom T-Shirt">
+        </div>
+
+        <div class="field">
+          <label>Quantity</label>
+          <input id="calcQty" type="number" min="1" value="1">
+        </div>
+
+        <div class="field">
+          <label>Cost Price ₹</label>
+          <input id="costPrice" type="number" min="0" placeholder="250">
+        </div>
+
+        <div class="field">
+          <label>Selling Price ₹</label>
+          <input id="sellPrice" type="number" min="0" placeholder="399">
+        </div>
+
+      </div>
+
+      <br>
+
+      <button class="btn" onclick="calculateProfit()">📊 Calculate Profit</button>
+
+      <div class="calc-result">
+
+        <div class="result-box">
+          <strong id="profitPer">₹0</strong>
+          <span>Profit / Item</span>
+        </div>
+
+        <div class="result-box">
+          <strong id="totalProfit">₹0</strong>
+          <span>Total Profit</span>
+        </div>
+
+        <div class="result-box">
+          <strong id="margin">0%</strong>
+          <span>Approx. Margin</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TRUST -->
+<section class="trust">
+
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">WHY BIZVERSE</span>
+      <h2>Built Around Your Ideas</h2>
+      <p>एक simple goal — useful ideas को practical action के करीब लाना।</p>
+    </div>
+
+    <div class="trust-grid">
+
+      <div class="trust-card">
+        <div>💡</div>
+        <h3>Useful Ideas</h3>
+        <p>Business और projects के लिए practical concepts.</p>
+      </div>
+
+      <div class="trust-card">
+        <div>⚡</div>
+        <h3>Simple Experience</h3>
+        <p>Information खोजने और enquiry करने का आसान तरीका.</p>
+      </div>
+
+      <div class="trust-card">
+        <div>💬</div>
+        <h3>Direct Connect</h3>
+        <p>Relevant enquiry सीधे WhatsApp पर भेजें.</p>
+      </div>
+
+      <div class="trust-card">
+        <div>🚀</div>
+        <h3>Action Focused</h3>
+        <p>Idea को next step में बदलने पर focus.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section>
+
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">COMMUNITY</span>
+      <h2>What People Could Explore</h2>
+      <p>Demo testimonials — इन्हें बाद में वास्तविक feedback से बदला जा सकता है।</p>
+    </div>
+
+    <div class="testimonials">
+
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Business idea को छोटे steps में सोचने के लिए useful structure मिला।”
+        </p>
+        <strong>— Demo User</strong>
+      </div>
+
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Project section में अलग-अलग categories होने से ideas compare करना आसान है।”
+        </p>
+        <strong>— Demo Student</strong>
+      </div>
+
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Custom product enquiry के लिए direct WhatsApp flow convenient है।”
+        </p>
+        <strong>— Demo Customer</strong>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section>
+
+  <div class="container">
+
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          BizVerse क्या है?
+          <span>＋</span>
+        </button>
+        <div class="faq-answer">
+          BizVerse एक platform concept है जहाँ business ideas,
+          tips, projects और custom products को एक जगह explore किया जा सकता है।
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          क्या मैं अपना project लेकर WhatsApp पर पूछ सकता हूँ?
+          <span>＋</span>
+        </button>
+        <div class="faq-answer">
+          हाँ। Project के details खोलकर WhatsApp enquiry button दबाएं।
+          Message में project का नाम automatically शामिल किया जाएगा।
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          क्या custom product के लिए अपनी design/photo भेज सकता हूँ?
+          <span>＋</span>
+        </button>
+        <div class="faq-answer">
+          हाँ। Product enquiry में अपनी requirement लिख सकते हैं और
+          WhatsApp पर आगे design/photo के बारे में बात कर सकते हैं।
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          क्या product पसंद न आने पर project enquiry कर सकता हूँ?
+          <span>＋</span>
+        </button>
+        <div class="faq-answer">
+          हाँ। प्रत्येक project के details में अलग WhatsApp enquiry option है।
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          WhatsApp किस number पर खुलेगा?
+          <span>＋</span>
+        </button>
+        <div class="faq-answer">
+          BizVerse में configured WhatsApp number 6265613128 है।
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <div class="contact-info">
+
+        <span class="eyebrow">CONTACT BIZVERSE</span>
+
+        <h2>Have An Idea?</h2>
+
+        <p>
+          Business idea, project, custom product या कोई दूसरी requirement है?
+          नीचे details भेजें और WhatsApp पर enquiry करें।
+        </p>
+
+        <div class="contact-list">
+
+          <div class="contact-item">
+            💬 <strong>WhatsApp</strong><br>
+            6265613128
+          </div>
+
+          <div class="contact-item">
+            ⚡ <strong>Quick Enquiry</strong><br>
+            Message automatically तैयार होगा।
+          </div>
+
+          <div class="contact-item">
+            🚀 <strong>BizVerse</strong><br>
+            Ideas • Business • Action
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label>Your Name</label>
+            <input id="contactName" placeholder="आपका नाम">
+          </div>
+
+          <div class="field">
+            <label>What do you need?</label>
+            <select id="contactType">
+              <option>Business Idea</option>
+              <option>Project</option>
+              <option>Custom Product</option>
+              <option>Business Advice</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+        </div>
+
+        <br>
+
+        <div class="field">
+          <label>Your Requirement</label>
+          <textarea id="contactRequirement"
+            placeholder="अपनी requirement यहाँ लिखें..."></textarea>
+        </div>
+
+        <br>
+
+        <button class="btn whatsapp" onclick="sendCustomWhatsApp()">
+          💬 WhatsApp पर Enquiry भेजें
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <a class="logo" href="#home" style="color:white">
+          Biz<span>Verse</span>
+        </a>
+
+        <p style="margin-top:12px">
+          Ideas, business, projects और custom products
+          को एक ही platform पर explore करें।
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="#ideas">Business Ideas</a>
+        <a href="#projects">Projects</a>
+        <a href="#products">Custom Products</a>
+        <a href="#whatsnew">What's New</a>
+      </div>
+
+      <div>
+        <h3>Tools</h3>
+        <a href="#calculator">Profit Calculator</a>
+        <a href="#business">Business Hub</a>
+        <a href="#contact">Custom Enquiry</a>
+      </div>
+
+      <div>
+        <h3>Connect</h3>
+        <a href="https://wa.me/916265613128" target="_blank">WhatsApp</a>
+        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 BizVerse — Ideas • Business • Action
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- GENERAL MODAL -->
+<div class="modal" id="mainModal" onclick="outsideClose(event)">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal()">✕</button>
+
+    <div id="modalContent"></div>
+
+  </div>
+
+</div>
+
+
+<!-- CART MODAL -->
+<div class="modal" id="cartModal" onclick="outsideCartClose(event)">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeCart()">✕</button>
+
+    <div class="modal-icon">🛒</div>
+
+    <h2>Your Cart</h2>
+
+    <p class="modal-description">
+      अपने selected products देखें और WhatsApp enquiry भेजें।
+    </p>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+
+    <button class="btn whatsapp" style="width:100%" onclick="sendCartWhatsApp()">
+      💬 WhatsApp पर Cart Enquiry
+    </button>
+
+  </div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* =========================
+   WHATSAPP CONFIG
+========================= */
+
+const WA_NUMBER = "916265613128";
+
+function openWhatsApp(message){
+
+  const encoded = encodeURIComponent(message);
+
+  window.open(
+    "https://wa.me/" + WA_NUMBER + "?text=" + encoded,
+    "_blank"
+  );
+
+}
+
+
+/* =========================
+   BUSINESS IDEAS — 20
+========================= */
+
+const ideas = [
+
+{
+title:"Local Service Directory",
+category:"offline",
+icon:"📍",
+description:"अपने शहर के trusted local services को एक platform पर list करने का business."
+},
+
+{
+title:"Print-on-Demand Store",
+category:"online",
+icon:"👕",
+description:"Custom designs को T-shirt, mug और दूसरे products पर sell करने का model."
+},
+
+{
+title:"Student Notes Platform",
+category:"student",
+icon:"📚",
+description:"Students के लिए organized notes और study resources का platform."
+},
+
+{
+title:"Social Media Service",
+category:"online",
+icon:"📱",
+description:"Local businesses के social media pages manage करने की service."
+},
+
+{
+title:"Home Food Brand",
+category:"offline",
+icon:"🍱",
+description:"घर से hygienic packaged food या snacks brand शुरू करने का idea."
+},
+
+{
+title:"Digital Invitation Studio",
+category:"creative",
+icon:"💌",
+description:"Birthday, wedding और events के लिए digital invitation designs."
+},
+
+{
+title:"AI Content Service",
+category:"online",
+icon:"🤖",
+description:"Businesses के लिए AI-assisted content planning और workflow service."
+},
+
+{
+title:"Plant Delivery Store",
+category:"offline",
+icon:"🌱",
+description:"Plants, pots और basic gardening products का local delivery model."
+},
+
+{
+title:"Repair Finder",
+category:"offline",
+icon:"🔧",
+description:"Customers को nearby repair services खोजने में मदद करने वाला platform."
+},
+
+{
+title:"Portfolio Builder",
+category:"online",
+icon:"💼",
+description:"Students और creators के लिए simple portfolio बनाने की service."
+},
+
+{
+title:"Study Planner",
+category:"student",
+icon:"🗓️",
+description:"Students के लिए timetable, goals और revision planning tool."
+},
+
+{
+title:"Custom Gift Business",
+category:"creative",
+icon:"🎁",
+description:"Personalized gifts और occasion-based custom products."
+},
+
+{
+title:"Freelance Design Studio",
+category:"creative",
+icon:"🎨",
+description:"Logo, poster, social media creatives और basic design services."
+},
+
+{
+title:"Local Event Service",
+category:"offline",
+icon:"🎪",
+description:"Small events के लिए decoration, invitations और coordination services."
+},
+
+{
+title:"Online Tutoring",
+category:"online",
+icon:"🎓",
+description:"अपनी strong subject skill के आधार पर online learning service."
+},
+
+{
+title:"Cafe Preorder Page",
+category:"online",
+icon:"☕",
+description:"Local cafe customers के लिए preorder और menu discovery page."
+},
+
+{
+title:"Eco Product Brand",
+category:"creative",
+icon:"♻️",
+description:"Reusable और environment-friendly products पर focused brand."
+},
+
+{
+title:"School Project Studio",
+category:"student",
+icon:"🏫",
+description:"Students को presentation और project planning में सहायता देने का concept."
+},
+
+{
+title:"Digital Marketing Hub",
+category:"online",
+icon:"📢",
+description:"Small businesses के लिए basic digital marketing solutions."
+},
+
+{
+title:"Creator Resource Store",
+category:"creative",
+icon:"🎥",
+description:"Creators के लिए templates, planning resources और digital tools का concept."
+}
+
+];
+
+
+/* =========================
+   BUSINESS TIPS — 20
+========================= */
+
+const tips = [
+
+["01","Customer को पहले समझें","Product बनाने से पहले यह समझें कि customer की वास्तविक problem क्या है।"],
+["02","Small शुरुआत करें","शुरुआत में छोटा version बनाकर feedback लेना useful हो सकता है।"],
+["03","Clear pricing रखें","Customer को price और offer साफ दिखाई देना चाहिए।"],
+["04","Expenses लिखें","Business के छोटे-बड़े खर्चों को regularly note करें।"],
+["05","Competition देखें","दूसरे businesses क्या offer कर रहे हैं, उसे समझें।"],
+["06","Quality पर ध्यान दें","कम quantity के साथ भी consistent quality रखना महत्वपूर्ण है।"],
+["07","Customer feedback लें","Customers से feedback लेकर service improve करें।"],
+["08","Online presence बनाएं","जरूरत के अनुसार website या social media presence helpful हो सकती है।"],
+["09","Simple branding रखें","नाम, logo और message में consistency रखें।"],
+["10","Content useful बनाएं","सिर्फ promotion के बजाय useful information भी share करें।"],
+["11","Repeat customers पर ध्यान दें","Existing customers के अच्छे experience पर focus करें।"],
+["12","Time tracking करें","कौन सा काम कितना समय लेता है, इसका अंदाजा रखें।"],
+["13","Goals लिखें","Weekly और monthly goals को लिखकर track करें।"],
+["14","Profit समझें","Sales ज्यादा होना और profit ज्यादा होना एक ही बात नहीं है।"],
+["15","Test करके scale करें","जो strategy काम करती दिखे, उसे धीरे-धीरे expand करें।"],
+["16","Emergency budget रखें","Business planning में unexpected expenses का ध्यान रखें।"],
+["17","Professional communication रखें","Customer messages का clear और respectful reply दें।"],
+["18","Data से सीखें","Sales और customer patterns देखकर decisions improve करें।"],
+["19","एक skill मजबूत करें","शुरुआत में किसी useful skill को अच्छी तरह develop करना helpful है।"],
+["20","Action लें","Idea को सिर्फ सोचने के बजाय छोटा practical next step तय करें।"]
+
+];
+
+
+/* =========================
+   PROJECTS — 20
+========================= */
+
+const projects = [
+
+{
+title:"Local Business Directory",
+icon:"📍",
+category:["online","offline"],
+description:"अपने शहर के local businesses को searchable directory में दिखाने का project.",
+details:"Business name, category, location, contact और basic information वाला directory platform बनाया जा सकता है।"
+},
+
+{
+title:"Custom Gift Studio",
+icon:"🎁",
+category:["creative","offline"],
+description:"Custom gifts और personalized products के लिए online showcase.",
+details:"Customer product चुनकर requirement और design details भेज सकता है।"
+},
+
+{
+title:"Student Notes Library",
+icon:"📚",
+category:["student","online"],
+description:"Students के लिए subject-wise organized notes library.",
+details:"Class, subject और topic के हिसाब से notes को organize किया जा सकता है।"
+},
+
+{
+title:"Poster Design Service",
+icon:"🎨",
+category:["creative","online"],
+description:"Businesses और events के लिए poster design service.",
+details:"Customer requirement देकर custom poster design enquiry भेज सकता है।"
+},
+
+{
+title:"Learning Mini Platform",
+icon:"🎓",
+category:["student","online"],
+description:"एक focused topic के लिए छोटा learning platform.",
+details:"Lessons, resources, progress tracking और basic learning sections जोड़े जा सकते हैं।"
+},
+
+{
+title:"Plant & Garden Store",
+icon:"🌱",
+category:["offline","creative"],
+description:"Plants और gardening products के लिए local store concept.",
+details:"Products, care information और local delivery enquiry system रखा जा सकता है।"
+},
+
+{
+title:"Creator Portfolio Hub",
+icon:"💼",
+category:["creative","online"],
+description:"Creators को अपने projects और skills showcase करने का platform.",
+details:"Portfolio sections, projects, services और contact options रखे जा सकते हैं।"
+},
+
+{
+title:"Study Planner",
+icon:"🗓️",
+category:["student","online"],
+description:"Study goals और daily planning के लिए useful tool.",
+details:"Subjects, tasks, deadlines और revision plans को organize किया जा सकता है।"
+},
+
+{
+title:"Local Repair Finder",
+icon:"🔧",
+category:["offline","online"],
+description:"Nearby repair services खोजने वाला platform concept.",
+details:"Service category और area के आधार पर repair providers दिखाए जा सकते हैं।"
+},
+
+{
+title:"Event Invitation Studio",
+icon:"💌",
+category:["creative","online"],
+description:"Digital invitations बनाने और share करने का concept.",
+details:"Event type, date, venue और custom message के आधार पर invitation बनाया जा सकता है।"
+},
+
+{
+title:"Small Cafe Preorder Page",
+icon:"☕",
+category:["online","offline"],
+description:"Small cafes के लिए simple menu और preorder page.",
+details:"Menu items, quantity और pickup enquiry को एक जगह रखा जा सकता है।"
+},
+
+{
+title:"School Project Showcase",
+icon:"🏫",
+category:["student","creative"],
+description:"Students के projects को showcase करने का platform.",
+details:"Project title, description, images और category के साथ projects display किए जा सकते हैं।"
+},
+
+{
+title:"AI Idea Assistant",
+icon:"🤖",
+category:["ai","online"],
+description:"User के problem के आधार पर project ideas suggest करने का concept.",
+details:"Problem input, category selection और idea suggestions जैसे features रखे जा सकते हैं।"
+},
+
+{
+title:"Freelance Service Hub",
+icon:"💻",
+category:["online","creative"],
+description:"Freelancers अपनी services और portfolio showcase कर सकते हैं.",
+details:"Service categories, portfolio और enquiry flow को जोड़ने का concept।"
+},
+
+{
+title:"Digital Menu Builder",
+icon:"📋",
+category:["online","offline"],
+description:"Restaurants और cafes के लिए digital menu solution.",
+details:"Categories, prices, descriptions और enquiry/contact options शामिल किए जा सकते हैं।"
+},
+
+{
+title:"Local Event Finder",
+icon:"🎪",
+category:["offline","online"],
+description:"Local events और activities discover करने का platform.",
+details:"Event date, category, location और organizer information दिखाई जा सकती है।"
+},
+
+{
+title:"Business Expense Tracker",
+icon:"📊",
+category:["online","student"],
+description:"Basic business expenses track करने वाला project.",
+details:"Expense category, amount और monthly summary जैसी सुविधाएँ जोड़ी जा सकती हैं।"
+},
+
+{
+title:"Inventory Planner",
+icon:"📦",
+category:["online","offline"],
+description:"Small business inventory को organize करने का concept.",
+details:"Product name, stock quantity और basic inventory alerts जैसे features रखे जा सकते हैं।"
+},
+
+{
+title:"Community Help Hub",
+icon:"🤝",
+category:["offline","online"],
+description:"Local community के useful resources और services का hub.",
+details:"Help categories और contact information के आधार पर resources organize किए जा सकते हैं।"
+},
+
+{
+title:"Digital Product Showcase",
+icon:"🛒",
+category:["creative","online"],
+description:"Digital products और creative resources showcase करने का platform.",
+details:"Product cards, details और direct enquiry flow शामिल किया जा सकता है।"
+}
+
+];
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+const products = [
+
+{
+id:1,
+name:"Custom T-Shirt",
+price:399,
+icon:"👕",
+category:"Wearables",
+description:"अपनी पसंद की design या photo के साथ custom T-shirt enquiry.",
+details:"Color, size, quantity और design requirement WhatsApp पर discuss की जा सकती है।"
+},
+
+{
+id:2,
+name:"Custom Mug",
+price:249,
+icon:"☕",
+category:"Gifts",
+description:"Personalized photo, text या design के लिए custom mug.",
+details:"Name, photo, message और quantity की requirement भेजी जा सकती है।"
+},
+
+{
+id:3,
+name:"Custom Cap",
+price:299,
+icon:"🧢",
+category:"Wearables",
+description:"Custom text, logo या design वाली cap enquiry.",
+details:"Preferred design और quantity WhatsApp पर बताई जा सकती है।"
+},
+
+{
+id:4,
+name:"Custom Tote Bag",
+price:349,
+icon:"👜",
+category:"Gifts",
+description:"Creative design या personalized artwork के साथ tote bag.",
+details:"Design idea, text, quantity और other requirements discuss करें।"
+}
+
+];
+
+
+/* =========================
+   IDEAS RENDER
+========================= */
+
+let currentIdeaFilter="all";
+
+function renderIdeas(){
+
+  const grid=document.getElementById("ideasGrid");
+
+  const list=ideas.filter(item =>
+    currentIdeaFilter==="all" ||
+    item.category===currentIdeaFilter
+  );
+
+  grid.innerHTML=list.map((item,index)=>`
+
+    <div class="content-card">
+
+      <div class="number">${String(index+1).padStart(2,"0")}</div>
+
+      <div style="font-size:30px;margin-top:5px">${item.icon}</div>
+
+      <h3>${item.title}</h3>
+
+      <div class="meta">
+        <span class="tag">${item.category}</span>
+        <span class="tag">Business Idea</span>
+      </div>
+
+      <p>${item.description}</p>
+
+      <br>
+
+      <button class="btn small"
+        onclick="ideaDetails('${escapeQuotes(item.title)}')">
+        View Details →
+      </button>
+
+    </div>
+
+  `).join("");
+
+}
+
+
+function filterIdeas(filter,button){
+
+  currentIdeaFilter=filter;
+
+  document.querySelectorAll("#ideas + section .tab");
+
+  const parent=button.parentElement;
+
+  parent.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+
+  button.classList.add("active");
+
+  renderIdeas();
+}
+
+
+function ideaDetails(title){
+
+  const item=ideas.find(x=>x.title===title);
+
+  if(!item)return;
+
+  openModal(`
+
+    <div class="modal-icon">${item.icon}</div>
+
+    <h2>${item.title}</h2>
+
+    <p class="modal-description">${item.description}</p>
+
+    <div class="detail-list">
+
+      <div><strong>Category:</strong> ${item.category}</div>
+
+      <div><strong>Why consider it?</strong> यह एक example concept है जिसे local demand, skills और budget के अनुसार आगे develop किया जा सकता है।</div>
+
+      <div><strong>First step:</strong> Target customer और उनकी problem को identify करें।</div>
+
+      <div><strong>Next step:</strong> छोटा test version बनाकर feedback लें।</div>
+
+    </div>
+
+    <button class="btn whatsapp"
+      onclick="openWhatsApp('Hello BizVerse, मुझे ${item.title} business idea के बारे में जानकारी चाहिए.')">
+      💬 WhatsApp पर पूछें
+    </button>
+
+  `);
+
+}
+
+
+/* =========================
+   TIPS RENDER
+========================= */
+
+function renderTips(){
+
+  document.getElementById("tipsGrid").innerHTML=
+
+  tips.map(item=>`
+
+    <div class="content-card">
+
+      <div class="number">${item[0]}</div>
+
+      <h3>${item[1]}</h3>
+
+      <p>${item[2]}</p>
+
+    </div>
+
+  `).join("");
+
+}
+
+
+/* =========================
+   PROJECT RENDER
+========================= */
+
+let currentProjectFilter="all";
+
+function renderProjects(){
+
+  const search=document.getElementById("projectSearch").value.toLowerCase().trim();
+
+  let list=projects.filter(project=>{
+
+    const filterMatch=
+      currentProjectFilter==="all" ||
+      project.category.includes(currentProjectFilter);
+
+    const searchMatch=
+      !search ||
+      project.title.toLowerCase().includes(search) ||
+      project.description.toLowerCase().includes(search);
+
+    return filterMatch && searchMatch;
+
+  });
+
+  document.getElementById("projectGrid").innerHTML=
+
+  list.map((project,index)=>`
+
+    <div class="project-card">
+
+      <div class="project-icon">${project.icon}</div>
+
+      <h3>${project.title}</h3>
+
+      <div class="meta">
+        ${project.category.map(c=>`<span class="tag">${c}</span>`).join("")}
+      </div>
+
+      <p>${project.description}</p>
+
+      <div class="bottom">
+
+        <button class="btn small"
+          onclick="projectDetails('${escapeQuotes(project.title)}')">
+          Details
+        </button>
+
+        <button class="btn small whatsapp"
+          onclick="projectWhatsApp('${escapeQuotes(project.title)}')">
+          💬
+        </button>
+
+      </div>
+
+    </div>
+
+  `).join("");
+
+}
+
+
+function filterProjects(filter,button){
+
+  currentProjectFilter=filter;
+
+  button.parentElement.querySelectorAll(".tab")
+    .forEach(x=>x.classList.remove("active"));
+
+  button.classList.add("active");
+
+  renderProjects();
+
+}
+
+
+function projectDetails(title){
+
+  const project=projects.find(x=>x.title===title);
+
+  if(!project)return;
+
+  openModal(`
+
+    <div class="modal-icon">${project.icon}</div>
+
+    <h2>${project.title}</h2>
+
+    <p class="modal-description">
+      ${project.description}
+    </p>
+
+    <div class="detail-list">
+
+      <div><strong>Project Type:</strong> ${project.category.join(" • ")}</div>
+
+      <div><strong>Project Details:</strong> ${project.details}</div>
+
+      <div><strong>Who can explore it?</strong> Students, creators, entrepreneurs और project builders.</div>
+
+      <div><strong>How to start:</strong> Problem → Customer → Simple Version → Feedback → Improvement.</div>
+
+    </div>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+
+      <button class="btn whatsapp"
+        onclick="projectWhatsApp('${escapeQuotes(project.title)}')">
+        💬 Project के बारे में WhatsApp करें
+      </button>
+
+      <button class="btn secondary"
+        onclick="closeModal()">
+        Close
+      </button>
+
+    </div>
+
+  `);
+
+}
+
+
+function projectWhatsApp(title){
+
+  openWhatsApp(
+    "Hello BizVerse,\n\n" +
+    "मुझे इस project के बारे में जानकारी चाहिए:\n" +
+    "Project: " + title + "\n\n" +
+    "कृपया मुझे इसके बारे में details बताएं।"
+  );
+
+}
+
+
+/* =========================
+   PRODUCTS RENDER
+========================= */
+
+function renderProducts(){
+
+  document.getElementById("productGrid").innerHTML=
+
+  products.map(product=>`
+
+    <div class="product-card">
+
+      <div class="product-visual">${product.icon}</div>
+
+      <div class="product-info">
+
+        <span class="tag">${product.category}</span>
+
+        <h3>${product.name}</h3>
+
+        <div class="price">₹${product.price}</div>
+
+        <p style="color:var(--muted);font-size:13px">
+          ${product.description}
+        </p>
+
+        <br>
+
+        <div class="product-actions">
+
+          <button class="btn small secondary"
+            onclick="productDetails(${product.id})">
+            View
+          </button>
+
+          <button class="btn small"
+            onclick="addToCart(${product.id})">
+            + Cart
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `).join("");
+
+}
+
+
+function productDetails(id){
+
+  const p=products.find(x=>x.id===id);
+
+  if(!p)return;
+
+  openModal(`
+
+    <div class="modal-icon">${p.icon}</div>
+
+    <h2>${p.name}</h2>
+
+    <div class="price">₹${p.price}</div>
+
+    <p class="modal-description">${p.description}</p>
+
+    <div class="detail-list">
+
+      <div><strong>Category:</strong> ${p.category}</div>
+
+      <div><strong>Details:</strong> ${p.details}</div>
+
+      <div><strong>Customization:</strong> अपना text, design या photo requirement WhatsApp पर discuss करें।</div>
+
+    </div>
+
+    <div class="field">
+
+      <label>Requirement</label>
+
+      <textarea id="productRequirement"
+        placeholder="Size, quantity, design, color या दूसरी requirement लिखें..."></textarea>
+
+    </div>
+
+    <br>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+
+      <button class="btn whatsapp"
+        onclick="productWhatsApp(${p.id})">
+        💬 WhatsApp Enquiry
+      </button>
+
+      <button class="btn"
+        onclick="addToCart(${p.id});closeModal()">
+        🛒 Add to Cart
+      </button>
+
+    </div>
+
+  `);
+
+}
+
+
+function productWhatsApp(id){
+
+  const p=products.find(x=>x.id===id);
+
+  const req=document.getElementById("productRequirement");
+
+  const requirement=req ? req.value.trim() : "";
+
+  openWhatsApp(
+    "Hello BizVerse,\n\n" +
+    "मुझे इस custom product में interest है:\n" +
+    "Product: " + p.name + "\n" +
+    "Price: ₹" + p.price + "\n" +
+    "Requirement: " + (requirement || "Please share details.") +
+    "\n\nकृपया आगे की जानकारी दें।"
+  );
+
+}
+
+
+/* =========================
+   CART
+========================= */
+
+let cart=JSON.parse(localStorage.getItem("bizverseCart") || "[]");
+
+
+function saveCart(){
+
+  localStorage.setItem(
+    "bizverseCart",
+    JSON.stringify(cart)
+  );
+
+  updateCartCount();
+
+}
+
+
+function addToCart(id){
+
+  const p=products.find(x=>x.id===id);
+
+  if(!p)return;
+
+  const existing=cart.find(x=>x.id===id);
+
+  if(existing){
+    existing.qty++;
+  }else{
+    cart.push({
+      id:p.id,
+      name:p.name,
+      price:p.price,
+      qty:1
+    });
+  }
+
+  saveCart();
+
+  showToast(p.name+" cart में add हो गया।");
+
+}
+
+
+function changeQty(id,amount){
+
+  const item=cart.find(x=>x.id===id);
+
+  if(!item)return;
+
+  item.qty+=amount;
+
+  if(item.qty<=0){
+    cart=cart.filter(x=>x.id!==id);
+  }
+
+  saveCart();
+  renderCart();
+
+}
+
+
+function removeCart(id){
+
+  cart=cart.filter(x=>x.id!==id);
+
+  saveCart();
+  renderCart();
+
+}
+
+
+function updateCartCount(){
+
+  const total=cart.reduce((sum,item)=>sum+item.qty,0);
+
+  document.getElementById("cartCount").textContent=total;
+
+}
+
+
+function openCart(){
+
+  renderCart();
+
+  document.getElementById("cartModal")
+    .classList.add("show");
+
+}
+
+
+function closeCart(){
+
+  document.getElementById("cartModal")
+    .classList.remove("show");
+
+}
+
+
+function outsideCartClose(e){
+
+  if(e.target.id==="cartModal"){
+    closeCart();
+  }
+
+}
+
+
+function renderCart(){
+
+  const box=document.getElementById("cartItems");
+
+  if(cart.length===0){
+
+    box.innerHTML=`
+      <div style="padding:35px 0;text-align:center;color:var(--muted)">
+        🛒 आपका cart अभी खाली है।
+      </div>
+    `;
+
+    document.getElementById("cartTotal").textContent="₹0";
+
+    return;
+
+  }
+
+  box.innerHTML=cart.map(item=>`
+
+    <div class="cart-item">
+
+      <div>
+
+        <h4>${item.name}</h4>
+
+        <div style="color:var(--muted);font-size:13px">
+          ₹${item.price} × ${item.qty}
+        </div>
+
+        <button
+          style="border:0;background:none;color:#e53935;margin-top:7px;font-size:12px"
+          onclick="removeCart(${item.id})">
+          Remove
+        </button>
+
+      </div>
+
+      <div class="qty">
+
+        <button onclick="changeQty(${item.id},-1)">−</button>
+
+        <strong>${item.qty}</strong>
+
+        <button onclick="changeQty(${item.id},1)">+</button>
+
+      </div>
+
+    </div>
+
+  `).join("");
+
+  const total=cart.reduce(
+    (sum,item)=>sum+(item.price*item.qty),0
+  );
+
+  document.getElementById("cartTotal").textContent="₹"+total;
+
+}
+
+
+function sendCartWhatsApp(){
+
+  if(cart.length===0){
+
+    showToast("Cart खाली है।");
+
+    return;
+
+  }
+
+  let message=
+    "Hello BizVerse,\n\n" +
+    "मुझे इन products के बारे में enquiry करनी है:\n\n";
+
+  cart.forEach(item=>{
+
+    message +=
+      "• " + item.name +
+      " — Qty: " + item.qty +
+      " — ₹" + (item.price*item.qty) +
+      "\n";
+
+  });
+
+  const total=cart.reduce(
+    (sum,item)=>sum+(item.price*item.qty),0
+  );
+
+  message +=
+    "\nEstimated Total: ₹" + total +
+    "\n\nकृपया आगे की जानकारी दें।";
+
+  openWhatsApp(message);
+
+}
+
+
+/* =========================
+   PROFIT CALCULATOR
+========================= */
+
+function calculateProfit(){
+
+  const cost=Number(
+    document.getElementById("costPrice").value
+  );
+
+  const sell=Number(
+    document.getElementById("sellPrice").value
+  );
+
+  const qty=Number(
+    document.getElementById("calcQty").value
+  ) || 1;
+
+  const profit=sell-cost;
+
+  const total=profit*qty;
+
+  const margin=sell>0
+    ? ((profit/sell)*100)
+    : 0;
+
+  document.getElementById("profitPer").textContent=
+    "₹"+profit.toFixed(2);
+
+  document.getElementById("totalProfit").textContent=
+    "₹"+total.toFixed(2);
+
+  document.getElementById("margin").textContent=
+    margin.toFixed(1)+"%";
+
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+function toggleFaq(button){
+
+  const item=button.parentElement;
+
+  item.classList.toggle("open");
+
+  const sign=button.querySelector("span");
+
+  sign.textContent=
+    item.classList.contains("open") ? "−" : "＋";
+
+}
+
+
+/* =========================
+   CONTACT WHATSAPP
+========================= */
+
+function sendCustomWhatsApp(){
+
+  const name=
+    document.getElementById("contactName").value.trim();
+
+  const type=
+    document.getElementById("contactType").value;
+
+  const requirement=
+    document.getElementById("contactRequirement").value.trim();
+
+  if(!name){
+
+    showToast("कृपया अपना नाम लिखें।");
+    return;
+
+  }
+
+  if(!requirement){
+
+    showToast("कृपया अपनी requirement लिखें।");
+    return;
+
+  }
+
+  openWhatsApp(
+    "Hello BizVerse,\n\n" +
+    "Name: " + name + "\n" +
+    "Enquiry Type: " + type + "\n" +
+    "Requirement: " + requirement +
+    "\n\nकृपया मुझे आगे की जानकारी दें।"
+  );
+
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+function openModal(content){
+
+  document.getElementById("modalContent").innerHTML=content;
+
+  document.getElementById("mainModal")
+    .classList.add("show");
+
+}
+
+
+function closeModal(){
+
+  document.getElementById("mainModal")
+    .classList.remove("show");
+
+}
+
+
+function outsideClose(e){
+
+  if(e.target.id==="mainModal"){
+    closeModal();
+  }
+
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+const savedTheme=
+  localStorage.getItem("bizverseTheme");
+
+if(savedTheme==="dark"){
+
+  document.body.classList.add("dark");
+
+  document.getElementById("themeBtn").textContent="☀️";
+
+}
+
+
+document.getElementById("themeBtn")
+  .addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    const dark=
+      document.body.classList.contains("dark");
+
+    localStorage.setItem(
+      "bizverseTheme",
+      dark ? "dark" : "light"
+    );
+
+    document.getElementById("themeBtn").textContent=
+      dark ? "☀️" : "🌙";
+
+  });
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+  document.getElementById("nav")
+    .classList.toggle("open");
+
+}
+
+
+/* =========================
+   GLOBAL SEARCH
+========================= */
+
+function globalSearch(){
+
+  const q=
+    document.getElementById("globalSearch")
+    .value.toLowerCase().trim();
+
+  if(!q){
+
+    showToast("कुछ search करें।");
+    return;
+
+  }
+
+  const project=projects.find(p=>
+    p.title.toLowerCase().includes(q) ||
+    p.description.toLowerCase().includes(q)
+  );
+
+  const idea=ideas.find(i=>
+    i.title.toLowerCase().includes(q)
+  );
+
+  const product=products.find(p=>
+    p.name.toLowerCase().includes(q)
+  );
+
+  if(project){
+
+    document.getElementById("projects")
+      .scrollIntoView({behavior:"smooth"});
+
+    document.getElementById("projectSearch").value=q;
+
+    renderProjects();
+
+    return;
+
+  }
+
+  if(idea){
+
+    document.getElementById("ideas")
+      .scrollIntoView({behavior:"smooth"});
+
+    return;
+
+  }
+
+  if(product){
+
+    document.getElementById("products")
+      .scrollIntoView({behavior:"smooth"});
+
+    return;
+
+  }
+
+  showToast("इस search के लिए result नहीं मिला।");
+
+}
+
+
+/* =========================
+   HELPERS
+========================= */
+
+function escapeQuotes(text){
+
+  return text
+    .replace(/\\/g,"\\\\")
+    .replace(/'/g,"\\'");
+
+}
+
+
+function showToast(message){
+
+  const toast=document.getElementById("toast");
+
+  toast.textContent=message;
+
+  toast.classList.add("show");
+
+  clearTimeout(window.toastTimer);
+
+  window.toastTimer=setTimeout(()=>{
+    toast.classList.remove("show");
+  },2600);
+
+}
+
+
+/* =========================
+   SEARCH LISTENER
+========================= */
+
+document.getElementById("projectSearch")
+  .addEventListener("keyup",function(e){
+
+    if(e.key==="Enter"){
+      renderProjects();
+    }
+
+  });
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+renderIdeas();
+renderTips();
+renderProjects();
+renderProducts();
+updateCartCount();
+
+</script>
 
 </body>
-  </html>
+</html>
