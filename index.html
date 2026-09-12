@@ -1192,6 +1192,225 @@ footer a:hover{
     flex-direction:column;
   }
 }
+  /* ==============================
+   BIZVERSE ACCOUNT PANEL
+   PROFESSIONAL MOBILE UI
+============================== */
+
+#accountPanel {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+}
+
+.account-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.62);
+    backdrop-filter: blur(4px);
+}
+
+.account-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(92%, 430px);
+    max-height: 88vh;
+    overflow-y: auto;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 24px 20px 22px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+    animation: accountPanelIn 0.22s ease-out;
+}
+
+@keyframes accountPanelIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -46%) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.account-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: #f2f2f2;
+    color: #333;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.account-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding-right: 40px;
+    margin-bottom: 24px;
+}
+
+.account-header > img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.account-header h2 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+}
+
+.account-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #777;
+}
+
+.account-main-btn,
+.account-secondary-btn,
+.account-danger-btn,
+.account-link-btn {
+    width: 100%;
+    min-height: 50px;
+    border-radius: 13px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.account-main-btn:active,
+.account-secondary-btn:active,
+.account-danger-btn:active,
+.account-link-btn:active {
+    transform: scale(0.98);
+}
+
+.account-main-btn,
+.account-secondary-btn,
+.account-danger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-bottom: 12px;
+}
+
+.account-main-btn {
+    border: 0;
+    background: #EE3E36;
+    color: #fff;
+}
+
+.account-secondary-btn {
+    border: 1px solid #EE3E36;
+    background: #fff;
+    color: #EE3E36;
+}
+
+.account-danger-btn {
+    border: 0;
+    background: #333;
+    color: #fff;
+}
+
+.account-main-btn img,
+.account-secondary-btn img,
+.account-danger-btn img {
+    width: 21px;
+    height: 21px;
+    object-fit: contain;
+}
+
+.account-link-btn {
+    border: 0;
+    background: transparent;
+    color: #EE3E36;
+    min-height: 42px;
+}
+
+.account-card {
+    background: #f7f7f7;
+    border: 1px solid #eeeeee;
+    border-radius: 15px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.account-card strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 17px;
+    color: #222;
+}
+
+.account-card span {
+    display: block;
+    font-size: 13px;
+    color: #777;
+}
+
+/* Dark Mode */
+body.dark-mode .account-box {
+    background: #171717;
+    color: #fff;
+}
+
+body.dark-mode .account-header h2,
+body.dark-mode .account-card strong {
+    color: #fff;
+}
+
+body.dark-mode .account-header p,
+body.dark-mode .account-card span {
+    color: #aaa;
+}
+
+body.dark-mode .account-close {
+    background: #292929;
+    color: #fff;
+}
+
+body.dark-mode .account-secondary-btn {
+    background: #171717;
+    color: #ff625a;
+    border-color: #ff625a;
+}
+
+body.dark-mode .account-link-btn {
+    color: #ff625a;
+}
+
+body.dark-mode .account-card {
+    background: #222;
+    border-color: #333;
+}
+
+/* Small Mobile */
+@media (max-width: 380px) {
+    .account-box {
+        width: 94%;
+        padding: 21px 16px 18px;
+        border-radius: 19px;
+    }
+
+    .account-header h2 {
+        font-size: 20px;
+    }
+  }
   </style>
 
 <!-- FIREBASE START -->
