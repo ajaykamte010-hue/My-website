@@ -1192,9 +1192,33 @@ footer a:hover{
     flex-direction:column;
   }
 }
-</style>
-  <!-- FIREBASE START -->
+  </style>
+
+<!-- FIREBASE START -->
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "अपनी Firebase API KEY यहाँ डालें",
+    authDomain: "bizverse-cc822.firebaseapp.com",
+    projectId: "bizverse-cc822",
+    storageBucket: "bizverse-cc822.firebasestorage.app",
+    messagingSenderId: "819875847829",
+    appId: "1:819875847829:web:b391aa84429e40a7ab459c"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  window.BizVerseFirebase = { app, auth, db };
+</script>
+
 <!-- FIREBASE END -->
+
 </head>
 
 <body>
