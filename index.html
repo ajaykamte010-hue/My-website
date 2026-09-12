@@ -1244,6 +1244,9 @@ footer a:hover{
 
     <div class="nav-actions">
       <button class="icon-btn" id="themeBtn" title="Dark Mode">🌙</button>
+      <button class="icon-btn" id="accountBtn" title="My Account">
+    <img src="icon-user.png" alt="Account">
+      </button>
 
       <button class="icon-btn cart-btn" onclick="openCart()" title="Cart">
         🛒
@@ -3318,6 +3321,55 @@ renderProducts();
 updateCartCount();
 
 </script>
+<!-- BIZVERSE ACCOUNT PANEL START -->
+<div id="accountPanel" style="display:none;">
+    <div class="account-overlay" id="accountOverlay"></div>
 
+    <div class="account-box">
+        <button id="accountCloseBtn" class="account-close" type="button">×</button>
+
+        <div class="account-header">
+            <img src="icon-user.png" alt="Account">
+            <div>
+                <h2>My Account</h2>
+                <p>Manage your BizVerse account</p>
+            </div>
+        </div>
+
+        <div id="accountLoggedOut">
+            <button id="accountSignInBtn" class="account-main-btn" type="button">
+                <img src="icon-login.png" alt=""> Sign In
+            </button>
+
+            <button id="accountCreateBtn" class="account-secondary-btn" type="button">
+                <img src="icon-create-account.png" alt=""> Create Account
+            </button>
+
+            <button id="accountForgotBtn" class="account-link-btn" type="button">
+                Forgot Password?
+            </button>
+        </div>
+
+        <div id="accountLoggedIn" style="display:none;">
+            <div class="account-card">
+                <strong id="accountDisplayName">—</strong>
+                <span id="accountDisplayUserId">User ID: —</span>
+            </div>
+
+            <button id="accountEditBtn" class="account-main-btn" type="button">
+                <img src="icon-edit.png" alt=""> Edit Account
+            </button>
+
+            <button id="accountNewBtn" class="account-secondary-btn" type="button">
+                <img src="icon-create-account.png" alt=""> New Account
+            </button>
+
+            <button id="accountSignOutBtn" class="account-danger-btn" type="button">
+                <img src="icon-logout.png" alt=""> Sign Out
+            </button>
+        </div>
+    </div>
+</div>
+<!-- BIZVERSE ACCOUNT PANEL END -->
 </body>
 </html>
