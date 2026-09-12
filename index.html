@@ -3607,7 +3607,40 @@ if (accountCloseBtn) {
                 <strong id="accountDisplayName">—</strong>
                 <span id="accountDisplayUserId">User ID: —</span>
             </div>
+<div id="accountSignInForm" style="display: none;">
 
+    <div class="account-form-title">
+        <h3>Sign In</h3>
+        <p>अपने BizVerse account में login करें</p>
+    </div>
+
+    <label for="loginUserId">User ID</label>
+    <input
+        type="text"
+        id="loginUserId"
+        placeholder="अपना User ID लिखें"
+        autocomplete="username"
+    >
+
+    <label for="loginPassword">Password</label>
+    <input
+        type="password"
+        id="loginPassword"
+        placeholder="अपना Password लिखें"
+        autocomplete="current-password"
+    >
+
+    <div id="loginMessage" class="account-message"></div>
+
+    <button id="loginSubmitBtn" class="account-main-btn" type="button">
+        <img src="icon-login.png" alt=""> Sign In
+    </button>
+
+    <button id="loginBackBtn" class="account-link-btn" type="button">
+        ← Back
+    </button>
+
+      </div>
             <button id="accountEditBtn" class="account-main-btn" type="button">
                 <img src="icon-edit.png" alt=""> Edit Account
             </button>
