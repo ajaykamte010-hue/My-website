@@ -3538,7 +3538,40 @@ renderTips();
 renderProjects();
 renderProducts();
 updateCartCount();
+/* ==============================
+   BIZVERSE ACCOUNT PANEL CONTROL
+============================== */
 
+const accountBtn = document.getElementById("accountBtn");
+const accountPanel = document.getElementById("accountPanel");
+const accountOverlay = document.getElementById("accountOverlay");
+const accountCloseBtn = document.getElementById("accountCloseBtn");
+
+function openAccountPanel() {
+    if (accountPanel) {
+        accountPanel.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
+}
+
+function closeAccountPanel() {
+    if (accountPanel) {
+        accountPanel.style.display = "none";
+        document.body.style.overflow = "";
+    }
+}
+
+if (accountBtn) {
+    accountBtn.addEventListener("click", openAccountPanel);
+}
+
+if (accountOverlay) {
+    accountOverlay.addEventListener("click", closeAccountPanel);
+}
+
+if (accountCloseBtn) {
+    accountCloseBtn.addEventListener("click", closeAccountPanel);
+  }
 </script>
 <!-- BIZVERSE ACCOUNT PANEL START -->
 <div id="accountPanel" style="display:none;">
