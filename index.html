@@ -3775,5 +3775,29 @@ if (accountCloseBtn) {
     </div>
 </div>
 <!-- BIZVERSE ACCOUNT PANEL END -->
+  <script>
+/* BIZVERSE CREATE ACCOUNT FORM CONNECTION */
+
+const accountCreateBtn = document.getElementById('accountCreateBtn');
+const accountCreateForm = document.getElementById('accountCreateForm');
+const accountCreateBackBtn = document.getElementById('createAccountBackBtn');
+const accountLoggedOut = document.getElementById('accountLoggedOut');
+const accountSignInForm = document.getElementById('accountSignInForm');
+
+if (accountCreateBtn) {
+    accountCreateBtn.addEventListener('click', function () {
+        accountLoggedOut.style.display = 'none';
+        accountSignInForm.style.display = 'none';
+        accountCreateForm.style.display = 'block';
+    });
+}
+
+if (accountCreateBackBtn) {
+    accountCreateBackBtn.addEventListener('click', function () {
+        accountCreateForm.style.display = 'none';
+        accountLoggedOut.style.display = 'block';
+    });
+}
+  </script>
 </body>
 </html>
