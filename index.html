@@ -3640,7 +3640,87 @@ if (accountCloseBtn) {
             </button>
         </div>
 
-        <div id="accountLoggedIn" style="display:none;">
+        <div id="accountCreateForm" style="display:none;">
+
+    <div class="account-form-title">
+        <h3>Create Account</h3>
+        <p>अपना नया BizVerse account बनाएँ</p>
+    </div>
+
+    <label for="createUserId">User ID *</label>
+    <input
+        type="text"
+        id="createUserId"
+        placeholder="अपना User ID लिखें"
+        autocomplete="username"
+    >
+
+    <label for="createPassword">Password *</label>
+    <input
+        type="password"
+        id="createPassword"
+        placeholder="कम से कम 6 characters"
+        autocomplete="new-password"
+    >
+
+    <label for="createFullName">Full Name *</label>
+    <input
+        type="text"
+        id="createFullName"
+        placeholder="पूरा नाम लिखें"
+        autocomplete="name"
+    >
+
+    <label for="createMobile">Mobile Number *</label>
+    <input
+        type="tel"
+        id="createMobile"
+        placeholder="+91 98765 43210"
+        inputmode="numeric"
+        autocomplete="tel"
+    >
+
+    <label for="createEmail">Email (Optional)</label>
+    <input
+        type="email"
+        id="createEmail"
+        placeholder="example@email.com"
+        autocomplete="email"
+    >
+
+    <label for="createDob">Date of Birth *</label>
+    <input
+        type="date"
+        id="createDob"
+        autocomplete="bday"
+    >
+
+    <label for="createAddress">Address *</label>
+    <textarea
+        id="createAddress"
+        placeholder="अपना पूरा address लिखें"
+        rows="3"
+        autocomplete="street-address"
+    ></textarea>
+
+    <label for="createNotes">Notes (Optional)</label>
+    <textarea
+        id="createNotes"
+        placeholder="कोई अतिरिक्त जानकारी"
+        rows="3"
+    ></textarea>
+
+    <div id="createAccountMessage" class="account-message"></div>
+
+    <button id="createAccountSubmitBtn" class="account-main-btn" type="button">
+        <img src="icon-create-account.png" alt=""> Create Account
+    </button>
+
+    <button id="createAccountBackBtn" class="account-link-btn" type="button">
+        ← Back
+    </button>
+
+      </div>
             <div class="account-card">
                 <strong id="accountDisplayName">—</strong>
                 <span id="accountDisplayUserId">User ID: —</span>
@@ -3679,6 +3759,7 @@ if (accountCloseBtn) {
     </button>
 
       </div>
+      <div id="accountLoggedIn" style="display:none;">
             <button id="accountEditBtn" class="account-main-btn" type="button">
                 <img src="icon-edit.png" alt=""> Edit Account
             </button>
