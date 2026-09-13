@@ -3562,6 +3562,24 @@ updateCartCount();
    BIZVERSE ACCOUNT PANEL CONTROL
 ============================== */
 
+const accountSignInBtn = document.getElementById('accountSignInBtn');
+const accountSignInForm = document.getElementById('accountSignInForm');
+const accountLoggedOut = document.getElementById('accountLoggedOut');
+const loginBackBtn = document.getElementById('loginBackBtn');
+
+if (accountSignInBtn) {
+    accountSignInBtn.addEventListener('click', function () {
+        accountLoggedOut.style.display = 'none';
+        accountSignInForm.style.display = 'block';
+    });
+}
+
+if (loginBackBtn) {
+    loginBackBtn.addEventListener('click', function () {
+        accountSignInForm.style.display = 'none';
+        accountLoggedOut.style.display = 'block';
+    });
+  }  
 const accountBtn = document.getElementById("accountBtn");
 const accountPanel = document.getElementById("accountPanel");
 const accountOverlay = document.getElementById("accountOverlay");
